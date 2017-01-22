@@ -16,7 +16,10 @@
   },
   "keywords": [
     "deployable",
-    "module"
+    "module",
+    "web",
+    "asset",
+    "assets"
   ],
   "author": "Matt Hoyle <code at deployable.co>",
   "license": "MIT",
