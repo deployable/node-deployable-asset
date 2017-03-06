@@ -1,5 +1,5 @@
 {
-  "name": "deployable-asset",
+  "name": "@deployable/asset",
   "version": "0.9.1",
   "description": "Deployable web asset helper functions",
   "main": "lib/index.js",
@@ -7,8 +7,8 @@
     "test": "mocha",
     "test:debug": "DEBUG='*' mocha debug",
     "test:coverage": "istanbul cover _mocha && istanbul check-coverage",
-    "npm:pubtest": "set -uex; npm test; npm version prerelease; npm publish --tag testing",
-    "npm:publish": "set -uex; rm -rf node_modules; yarn; npm run test:coverage; [ -z \"$(git status --porcelain)\" ]; npm version patch; git push; npm publish; git push --tags;"
+    "npm:pubtest": "set -uex; npm test; npm version prerelease; npm publish --tag testing --access public",
+    "npm:publish": "set -uex; rm -rf node_modules; yarn install; yarn run test:coverage; npm version patch; git push; npm publish --access public; git push --tags;"
   },
   "repository": {
     "type": "git",
@@ -26,9 +26,10 @@
   "bugs": {
     "url": "https://github.com/deployable/node-deployable-asset/issues"
   },
-  "homepage": "https://github.com/deployable/deployable-asset#readme",
+  "homepage": "https://github.com/deployable/node-deployable-asset#readme",
   "devDependencies": {
     "chai": "~3.5.0",
+    "deployable-test": "0.0.1",
     "istanbul": "~0.4.5",
     "mocha": "^3.2.0"
   }
